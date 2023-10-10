@@ -12,103 +12,65 @@ header{
   right: 0;
   height: 74px;
   background-color: #fff;
-  nav{
+  border-bottom: 1px solid #eee;
+  z-index: 100;
+  .inner{
     display: flex;
     justify-content: space-between;
     align-items: center;
     h1{
       flex-grow: 3;
     }
-    //-------- dropdown menu (S) -----------
-    .depth1{
+    nav{
       display: flex;
+      justify-content: space-between;
       align-items: center;
       flex-grow: 2;
-      height: 74px;
-      > li{
-        position: relative;
-        > a{
-          display: flex;
-          align-items: center;
-          height: 74px;
-          padding: 22px 20px;
-          font-size: 1.6rem;
-        }
-        .arrow{
-          &::after{
-            content: "";
-            width: 14px;
-            height: 14px;
-            margin-left: 5px;
-            background: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.1,9.4L1.3,4.7l1.4-1.4L6,6.6l3.2-3.3l1.4,1.4L6.1,9.4z' fill='gray'%3E%3C/path%3E%3C/svg%3E") no-repeat right center;
-            transition: transform 0.3s ease;
+      //-------- dropdown menu (S) -----------
+      .depth1{
+        display: flex;
+        align-items: center;
+        height: 74px;
+        > li{
+          position: relative;
+          > a{
+            display: flex;
+            align-items: center;
+            height: 74px;
+            padding: 22px 20px;
+            font-size: 1.6rem;
           }
-        }
-        .depth2{
-          display: none;
-          flex-wrap: wrap;
-          position: absolute;
-          top: 100%;
-          left: 50%;
-          width: 200px;
-          margin: -1px 0 0 -100px;
-          padding: 25px 0 23px;
-          background-color: #fff;
-          border: 1px solid #eee;
-          border-radius: 4px;
-          z-index: 1000;
-          >li{
-            >a{
-              display: flex;
-              align-items: center;
-              width: 158px;
-              height: 40px;
-              margin-left: 20px;
-              padding: 5px 14px;
-              font-size: 1.6rem;
-              color: #666;
-              &:hover{
-                color: #111;
-                background-color: #f4f4f4;
-              }
+          .arrow{
+            &::after{
+              content: "";
+              width: 14px;
+              height: 14px;
+              margin-left: 5px;
+              background: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.1,9.4L1.3,4.7l1.4-1.4L6,6.6l3.2-3.3l1.4,1.4L6.1,9.4z' fill='gray'%3E%3C/path%3E%3C/svg%3E") no-repeat right center;
+              transition: transform 0.3s ease;
             }
           }
-        }
-        &:hover > a{
-          color: #1e90ff;
-        }
-        &:hover .arrow::after{
-          transform: rotate(-180deg);
-          background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.1,9.4L1.3,4.7l1.4-1.4L6,6.6l3.2-3.3l1.4,1.4L6.1,9.4z' fill='%231e90ff'%3E%3C/path%3E%3C/svg%3E");
-        }
-        &:hover .depth2{
-          display: flex;
-        }
-        .first_depth2{
-          display: none;
-          flex-wrap: wrap;
-          width: 380px;
-          padding: 25px 0 23px;
-          background-color: #fff;
-          > li{
-            width: 186px;
-            padding: 0 14px 15px;
-            > a{
-              display: block;
-              padding-left: 14px;
-              font-size: 1.4rem;
-              color: #aaa;
-              pointer-events: none;
-            }
-            .depth3{
-              padding-top:5px;
-              a{
+          .depth2{
+            display: none;
+            flex-wrap: wrap;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            width: 200px;
+            margin: -1px 0 0 -100px;
+            padding: 25px 0 23px;
+            background-color: #fff;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            z-index: 1000;
+            >li{
+              >a{
                 display: flex;
                 align-items: center;
                 width: 158px;
                 height: 40px;
+                margin-left: 20px;
                 padding: 5px 14px;
-                margin: auto;
                 font-size: 1.6rem;
                 color: #666;
                 &:hover{
@@ -118,20 +80,65 @@ header{
               }
             }
           }
-          &::after{
-            content: "";
-            display: block;
-            position: absolute;
-            top: 23px;
-            left: 50%;
-            width: 1px;
-            height: calc(100% - 46px);
-            background-color: #eee;
+          &:hover > a{
+            color: #1e90ff;
+          }
+          &:hover .arrow::after{
+            transform: rotate(-180deg);
+            background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.1,9.4L1.3,4.7l1.4-1.4L6,6.6l3.2-3.3l1.4,1.4L6.1,9.4z' fill='%231e90ff'%3E%3C/path%3E%3C/svg%3E");
+          }
+          &:hover .depth2{
+            display: flex;
+          }
+          .first_depth2{
+            display: none;
+            flex-wrap: wrap;
+            width: 380px;
+            padding: 25px 0 23px;
+            background-color: #fff;
+            > li{
+              width: 186px;
+              padding: 0 14px 15px;
+              > a{
+                display: block;
+                padding-left: 14px;
+                font-size: 1.4rem;
+                color: #aaa;
+                pointer-events: none;
+              }
+              .depth3{
+                padding-top:5px;
+                a{
+                  display: flex;
+                  align-items: center;
+                  width: 158px;
+                  height: 40px;
+                  padding: 5px 14px;
+                  margin: auto;
+                  font-size: 1.6rem;
+                  color: #666;
+                  &:hover{
+                    color: #111;
+                    background-color: #f4f4f4;
+                  }
+                }
+              }
+            }
+            &::after{
+              content: "";
+              display: block;
+              position: absolute;
+              top: 23px;
+              left: 50%;
+              width: 1px;
+              height: calc(100% - 46px);
+              background-color: #eee;
+            }
           }
         }
       }
+      //-------- dropdown menu (E) -----------
     }
-    //-------- dropdown menu (E) -----------
     //-------- right button (S) -----------
     .right_btn{
       display: flex;
@@ -151,6 +158,7 @@ header{
       }
       .contact_btn{
         display: flex;
+        justify-content: center;
         align-items: center;
         height: 40px;
         margin-left: 12px;
@@ -168,7 +176,10 @@ header{
         }
       }
     }
-    //-------- right button (E) -----------
+  //-------- right button (E) -----------
+  .hamberger_btn{
+    display: none;
+  }
   }
 }
 //-------- header (E) --------------------
@@ -177,14 +188,14 @@ main{
   padding-top: 74px;
   //----- main video (S) ------
   .main_video{
-    max-height: 1090px;
+    height: calc(100vh - 74px);
+    margin-bottom: 200px;
     .video_inner{
-      position: relative;
-      top: 0;
-      left: 0;
+      height: 100%;
+      width: 100%;
       z-index: -1;
       video{
-        height:100vh;
+        height:100%;
         width: 100%;
         object-fit: cover;
       }
@@ -200,13 +211,13 @@ main{
       }
       .text{
         position: absolute;
-        top: 46%;
+        top: 50%;
         left: 0;
         right: 0;
-        margin: 0 10%;
         transform: translate(0,-50%);
         z-index: 1;
         h2{
+          margin-bottom: 32px;
           font-size: 5.8rem;
           font-weight: 700;
           color: #fff;
@@ -214,7 +225,6 @@ main{
         }
         span{
           display: block;
-          margin-top: 32px;
           font-size: 2.6rem;
           font-weight: 700;
           color: #fff;
@@ -227,7 +237,7 @@ main{
     //----- 이커머스 로고들 (S) ------
   .e-commerce_logo{
     max-width: 1500px;
-    margin-top: 200px;
+    margin-bottom: 200px;
     h2{
       font-size: 4.8rem;
       font-weight: 700;
@@ -237,11 +247,13 @@ main{
     ul{
       display: grid;
       grid-template-columns: repeat(7, 1fr);
-      gap: 40px 33px;
+      gap: 40px 0;
       margin-top: 80px;
       li{
+        text-align: center;
         img{
-          max-width: 186px;
+          width: 186px;
+          max-width: 100%;
           max-height: 80px;
         }
       }
@@ -250,24 +262,24 @@ main{
   //----- 이커머스 로고들 (E) ------
   //-----  main content (S) ------
   .main_content{
-    margin-top: 200px;
+    margin-bottom: 200px;
     h2{
       font-size: 4.8rem;
       font-weight: 700;
       text-align: center;
       letter-spacing: -0.02em;
+      margin-bottom: 80px;
     }
     > ul{
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      position: relative;
-      margin-top: 80px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      max-width: 1244px;
+      margin: 0 auto;
+      background-color: #eee;
       >li{
-        width: 414px;
-        height: 340px;
         padding: 40px 33px 53px;
-        background: no-repeat center top 40px/60px;
+        background: #fff no-repeat center top 40px/60px;
         text-align: center;
         strong{
           display: block;
@@ -299,25 +311,18 @@ main{
       }
       .content_item1{
         background-image: url(../../assets/img/main-service-targeting.gif);
-        border-right:1px solid #eee;
-        border-bottom: 1px solid #eee;
       }
       .content_item2{
         background-image: url(../../assets/img/main-service-ai.gif);
-        border-right:1px solid #eee;
-        border-bottom: 1px solid #eee;
       }
       .content_item3{
         background-image: url(../../assets/img/main-service-onsite.gif);
-        border-bottom: 1px solid #eee;
       }
       .content_item4{
         background-image: url(../../assets/img/main-service-offsite.gif);
-        border-right:1px solid #eee;
       }
       .content_item5{
         background-image: url(../../assets/img/main-service-analysis.gif);
-        border-right:1px solid #eee;
       }
       .content_item6{
         background-image: url(../../assets/img/main-service-data.gif);
@@ -332,7 +337,7 @@ main{
     flex-wrap: wrap;
     width: 100%;
     height: 380px;
-    margin-top: 200px;
+    margin-bottom: 200px;
     padding: 118px 0;
     background: url(../../assets/img/groobee_00_banner.jpg) no-repeat center bottom -170px/cover;
     h3{
@@ -368,21 +373,23 @@ main{
   //-----  main banner (E) ------
   //-----  main_news (S) ------
   .main_news{
-    margin-top: 200px;
+    margin-bottom: 261px;
     h2{
       font-size: 4.8rem;
       font-weight: 700;
       text-align: center;
       letter-spacing: -0.02em;
+      margin-bottom: 80px;
     }
     .underbox{
       display: flex;
       justify-content: space-between;
-      margin-top: 80px;
       > a{
         display: block;
+        width: calc(50% - 34px);
         img{
           display: block;
+          width: 100%;
           border-radius: 6px;
           margin-bottom: 32px;
           overflow: hidden;
@@ -450,14 +457,16 @@ main{
     }
   }
   //-----  main_news (E) ------
+  //-----  footer_banner (S) ------
   .footer_banner{
     position: relative;
     left: 0;
-    height: 35.5%;
+    height: 380px;
     width: 100%;
-    margin-top: 261px;
     background-color: #111;
     video{
+      width: 100%;
+      height: 100%;
       object-fit: cover;
     }
     &::after{
@@ -478,6 +487,7 @@ main{
       text-align: center;
       z-index: 100;
       h3{
+        width: 712px;
         font-size: 3.6rem;
         font-weight: 700;
         color: #fff;
@@ -488,7 +498,7 @@ main{
         align-items: center;
         width: 219px;
         height: 60px;
-        margin: 32px 0 0 30%;
+        margin: 32px 0 0 35%;
         padding: 0 50px;
         font-size: 1.6rem;
         font-weight: 700;
@@ -503,6 +513,7 @@ main{
           background: #fff url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.7,10.7L3.3,9.3L6.6,6L3.3,2.7l1.4-1.4l4.7,4.7L4.7,10.7z' fill='%231e90ff'%3E%3C/path%3E%3C/svg%3E") no-repeat center right 50px/12px;
         }
       }
+      //-----  footer_banner (E) ------
     }
   }
 }
@@ -516,10 +527,11 @@ footer{
   .footer_logo{
     display: block;
     width: 180px;
+    margin-bottom: 53px;
   }
   // ------- topbox (S) -----------
   .topbox{
-    margin-top: 53px;
+    margin-bottom: 28px;
     .footer_dropdown_menu{
       display: flex;
       margin: 0 -8px;
@@ -590,7 +602,7 @@ footer{
   .underbox{
     display: flex;
     justify-content: space-between;
-    margin-top: 28px;
+    margin-bottom: 20px; 
     address{
       font-style: normal;
       ul{
@@ -653,7 +665,6 @@ footer{
   }
   // ------- underbox (E) -----------
   .copyright{
-    margin-top: 20px;
     font-size: 1.4rem;
     font-weight: 400;
     color: #fff;
@@ -672,29 +683,359 @@ footer{
     margin: 0 50px;
   }
   main{
-    .video_inner{
-      .text{
-        margin: 0 100px;
-        h2{
-          font-size: 5.4rem;
-        }
-        span{
-          margin-top: 30px;
-          font-size: 2.6rem;
+    .main_video{
+      .video_inner{
+        .text{
+          h2{
+            font-size: 5.4rem;
+            margin-bottom: 30px;
+          }
+          span{
+            font-size: 2.6rem;
+          }
         }
       }
-    }
+    }    
     .inner{
-      max-width: inherit;
-      margin: 0 100px;
       > div{
-        margin-top: 180px;
+        margin-bottom: 180px;
       }
     }
   }
 }
+// -------------- 반응형 1200px (S) ----------------
+@media only screen and (max-width:1200px){
+  html,body{
+    font-size: 50%;
+  }
+.inner{
+  margin: 0 40px;
+}
+header{
+  height: 70px;
+  .inner{
+    nav{
+      .depth1{
+        > li{
+          > a{
+            padding: 20px 18px;
+          }
+          .depth2{
+            top: 70px;
+          }
+        }
+      }
+    }
+  }
+}
+main{
+  padding-top: 70px;
+  .main_video{
+    height: calc(100vh - 70px);
+  }
+}
+footer{
+  .underbox{
+    address{
+      ul{
+        width: 430px;
+      }
+    }
+  }
+}
+}
 // -------------- 반응형 1024px (S) ----------------
 @media only screen and (max-width:1024px){
+  header{
+    // height: 100%;으로 해야함
+    .inner{
+      height: 70px;
+      nav{
+        display: none; //block으로 변경
+        align-items: stretch;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #fff;
+        border-top: 1px solid #eee;
+        .depth1{
+          align-items: baseline;
+          flex-direction: column;
+          width: 100%;
+          padding: 20px 0 70px;
+          > li{
+            display: block;
+            position: relative;
+            width: 100%;
+            height: 70px;
+            > a{
+              padding: 20px 45px 20px 40px;
+              font-size: 2.9rem;
+              font-weight: bold;
+              color: #111;
+              letter-spacing: -0.02em;
+            }
+            .arrow{
+              display: flex;
+              justify-content: space-between;
+              &::after{
+                width: 24px;
+                background: url("data:image/svg+xml,%3Csvg width='24px' height='24px' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23aaa' d='M12.1,17.4L3.3,8.7l1.4-1.4l7.4,7.3l7.2-7.3l1.4,1.4L12.1,17.4z'%3E%3C/path%3E%3C/svg%3E ") no-repeat right center/24px;
+              }
+            }
+            &:hover > a{
+              color: #111;
+            }
+            &:hover .arrow::after{
+              transform: none;
+              background-image: url("data:image/svg+xml,%3Csvg width='24px' height='24px' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23aaa' d='M12.1,17.4L3.3,8.7l1.4-1.4l7.4,7.3l7.2-7.3l1.4,1.4L12.1,17.4z'%3E%3C/path%3E%3C/svg%3E ");
+            }
+            &:hover .depth2{
+              display: none;
+            }
+            .active{
+              color: #1e90ff;
+            }
+            .depth2{
+              display: block;
+              position: relative;
+              top: 0;
+              left: 0;
+              width: 100%;
+              margin:0 0 20px;
+              background-color: #f8f8f8;
+              opacity: 0;
+              >li{
+                position: relative;
+                >a{
+                  padding-left: 18px;
+                  font-size: 2rem;
+                  font-weight: bold;
+                  color: #666;
+                  }
+                }
+              }
+              .first_depth2{
+                display: block;
+                width: 100%;
+                padding: 25px 0 23px;
+                background-color: #f8f8f8;
+                > li{
+                  width: 100%;
+                  padding: 0;
+                  > a{
+                    display: block;
+                    font-size: 1.8rem;
+                    color: #aaa;
+                  }
+                  .depth3{
+                    padding:0 0 15px;
+                    a{
+                      margin-left: 20px;
+                      padding-left: 18px;
+                      font-size: 2rem;
+                      font-weight: bold;
+                      color: #666;
+                      &:hover{
+                        color: #111;
+                        background-color: #f4f4f4;
+                      }
+                    }
+                  }
+                }
+                &::after{
+                  content: "";
+                  display: none;
+                }
+              }
+              .active{
+                opacity: 1;
+              }
+            }
+          }
+        }
+        .right_btn{
+          display: none;//block으로 변경
+          .login_btn{
+            height: 32px;
+            margin-right: 20px;
+            padding: 4px 28px 4px 12px;
+            font-size: 1.7rem;
+            font-weight: bold;
+            color: #8e8e8e;
+            background-color: #f4f4f4;
+            background-position: right 12px center;
+            border-radius: 4px;
+          }
+          .contact_btn{
+            position: absolute;
+            left: -20px;
+            right: 0;
+            bottom: -3px;
+            height: 70px;
+            font-size: 2rem;
+            font-weight: bold;
+            border-radius: 0;
+            background: #1e90ff url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.7,10.7L3.3,9.3L6.6,6L3.3,2.7l1.4-1.4l4.7,4.7L4.7,10.7z' fill='%23fff'%3E%3C/path%3E%3C/svg%3E%0A") no-repeat 57% 50%/12px;
+          }
+        }
+        .hamberger_btn{
+          display: block;
+          position: relative;
+          width: 24px;
+          height: 24px;
+          background-color: transparent;
+          border: none;
+          span{
+            display: block;
+            position: absolute;
+            left: 2px;
+            width: 20px;
+            height: 2px;
+            background: #111;
+          }
+          .line1{
+            top: 3px;
+          }
+          .line2{
+            top: 11px;
+          }
+          .line3{
+            top: 19px;
+          }
+        }
+      }
+    }
+    main{
+      .e-commerce_logo{
+        ul{grid-template-columns: repeat(5, 1fr);}
+      }
+    }
+  }
 
-}
 // -------------- 반응형 1024px (E) ----------------
+// -------------- 반응형 860px (S) ----------------
+@media only screen and (max-width:860px){
+  main{
+    .e-commerce_logo{
+      ul{grid-template-columns: repeat(4, 1fr);}
+    }
+    .main_content{
+      ul{
+        grid-template-columns: repeat(2, 1fr);
+        li{
+          strong{
+            margin-top: 80px;
+            font-size: 3.3rem;
+            font-weight: 600;
+          }
+          p{
+            margin-top: 10px;
+            font-size: 2rem;
+          }
+          a{
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+    .main_banner{
+      position: relative;
+      width: 100vw;
+      height: 100%;
+      margin-left: -40px;
+      h3{
+        position: absolute;
+        top: 30%;
+      }
+      a{
+        position: absolute;
+        top: 40%;
+      }
+    }
+    .main_news{
+      .underbox{
+        flex-direction: column;
+        > a{
+          width: 100%;
+          padding-bottom: 32px;
+          border-bottom: 1px solid #ddd;
+          strong{
+            font-size: 3rem;
+          }
+        }
+        ul{
+          width: 100%;
+          li{
+            &:first-child{
+              a{
+                padding-top: 32px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  footer{
+    .footer_logo{
+      display: none;
+    }
+    .topbox{
+      .footer_dropdown_menu{
+        >li{
+          >a{
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+    .underbox{
+      flex-direction: column;
+      address{
+        margin-bottom: 20px;
+        ul{
+          width: 520px;
+          li{
+            font-size: 1.8rem;
+            a{
+              font-size: 1.8rem;
+            }
+          }
+        }
+      }
+      .footer_sns{
+        >li:first-child{
+          margin-left: -8px;
+        }
+      }
+    }
+  }
+}
+// -------------- 반응형 860px (E) ----------------
+// -------------- 반응형 640px (S) ----------------
+@media only screen and (max-width:640px){
+  main{
+    .inner{
+      .e-commerce_logo{
+        h2{
+          width: 500px;
+          margin: auto;
+        }
+      }
+      .main_content{
+        ul{
+          grid-template-columns: repeat(1, 1fr);
+          background-color: #fff;
+          li{
+            margin-bottom: 10px;
+            background-color: #f8f8f8;
+          }
+        }
+      }
+    }
+  }
+}
+// -------------- 반응형 640px (E) ----------------
