@@ -753,7 +753,7 @@ footer .copyright {
 }
 @media only screen and (max-width: 1024px) {
   header {
-    transition: all 0;
+    transition: none;
     overflow: hidden;
   }
   header .inner {
@@ -787,6 +787,9 @@ footer .copyright {
     color: #111;
     letter-spacing: -0.02em;
   }
+  header .inner nav .depth1 > li .active {
+    color: #1e90ff;
+  }
   header .inner nav .depth1 > li .arrow {
     display: flex;
     justify-content: space-between;
@@ -795,8 +798,18 @@ footer .copyright {
     width: 24px;
     background: url("data:image/svg+xml,%3Csvg width='24px' height='24px' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23aaa' d='M12.1,17.4L3.3,8.7l1.4-1.4l7.4,7.3l7.2-7.3l1.4,1.4L12.1,17.4z'%3E%3C/path%3E%3C/svg%3E ") no-repeat right center/24px;
   }
-  header .inner nav .depth1 > li:hover > a {
-    color: #111;
+  header .inner nav .depth1 > li .change {
+    display: flex;
+    justify-content: space-between;
+  }
+  header .inner nav .depth1 > li .change::after {
+    content: "";
+    width: 24px;
+    height: 14px;
+    margin-left: 5px;
+    background: url("data:image/svg+xml,%3Csvg width='24px' height='24px' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23111' d='M12.1,17.4L3.3,8.7l1.4-1.4l7.4,7.3l7.2-7.3l1.4,1.4L12.1,17.4z'%3E%3C/path%3E%3C/svg%3E ") no-repeat right center/24px;
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
   }
   header .inner nav .depth1 > li:hover .arrow::after {
     transform: none;

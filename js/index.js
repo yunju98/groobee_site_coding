@@ -67,11 +67,17 @@ $(".hamberger_btn").click(function(){
     $(".line1").removeClass("active1")
     $(".line2").removeClass("active2")
     $(".line3").removeClass("active3")
+    $("header").off('scroll touchmove mousewheel'); 
   }else{
     $("header, nav ,.right_btn").addClass("active")
     $(".line1").addClass("active1")
     $(".line2").addClass("active2")
     $(".line3").addClass("active3")
+    $("header").on('scroll touchmove mousewheel', function(e){
+      e.preventDefault();
+      e.stopPropagation(); 
+      return false;
+      })
   }
 })
 
@@ -79,9 +85,11 @@ $("header .depth1 > li > a").click(function(){
   let dropDownIndex = $(this).parent().index()
   if($(document).width() < 1025) {
     if($("header .depth1 > li").eq(dropDownIndex).children(".depth2").hasClass("active") ){
-      $("header .depth1 > li").eq(dropDownIndex).children(".depth2").removeClass("active")
+      $("header .depth1 > li").eq(dropDownIndex).children(".depth2").removeClass("active");
+      $("header .depth1 > li").eq(dropDownIndex).children("a").addClass("arrow").removeClass("change");
     }else{
-      $("header .depth1 > li").eq(dropDownIndex).children(".depth2").addClass("active")
+      $("header .depth1 > li").eq(dropDownIndex).children(".depth2").addClass("active");
+      $("header .depth1 > li").eq(dropDownIndex).children("a").removeClass("arrow").addClass("change");
     }
   }
 })
