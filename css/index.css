@@ -1045,3 +1045,7 @@ footer .copyright {
     background-color: #f8f8f8;
   }
 }
+.scrollLock {
+  height: 100vh;
+  overflow: hidden;
+}

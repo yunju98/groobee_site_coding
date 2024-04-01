@@ -1117,3 +1117,7 @@ footer{
   }
 }
 // -------------- 반응형 640px (E) ----------------
+.scrollLock{
+  height: 100vh;
+  overflow: hidden;
+}
